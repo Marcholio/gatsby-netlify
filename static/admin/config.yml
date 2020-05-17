@@ -9,6 +9,7 @@ collections:
     folder: blog
     create: true
     fields:
+      - { name: slug, label: slug }
       - { name: path, label: Path }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
