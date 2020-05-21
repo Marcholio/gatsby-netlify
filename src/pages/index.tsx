@@ -29,7 +29,7 @@ const IndexPage = () => {
       }
 
       jumbo: markdownRemark(
-        fileAbsolutePath: { glob: "**/markdown/jumbo/jumbo.md" }
+        fileAbsolutePath: { glob: "**/markdown/jumbo/*.md" }
       ) {
         frontmatter {
           description
