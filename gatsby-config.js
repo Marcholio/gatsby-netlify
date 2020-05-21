@@ -1,25 +1,18 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Lorem ipsum Oy`,
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis hendrerit rutrum sodales.`,
+    author: `Markus Tyrkkö`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Lorem ipsum dolor sit amet`,
+        short_name: `Lorem`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
@@ -31,10 +24,16 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `blog`,
-        path: `${__dirname}/blog`,
+        name: `markdown`,
+        path: `${__dirname}/markdown`,
       },
     },
     `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: "src/utils/typography",
+      },
+    },
   ],
 }

@@ -4,13 +4,10 @@ backend:
 media_folder: static/assets
 public_folder: /assets
 collections:
-  - name: blog
-    label: Blog
-    folder: blog
+  - name: jumbo
+    folder: markdown/jumbo
+    label: Jumbo
     create: true
     fields:
-      - { name: slug, label: slug }
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: datetime }
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
+      - { name: header, label: Header }
+      - { name: description, label: Description }
