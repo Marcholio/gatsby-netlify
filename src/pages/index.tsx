@@ -12,6 +12,9 @@ import {
   MDBCol,
   MDBRow,
   MDBCardTitle,
+  MDBCard,
+  MDBCardBody,
+  MDBCardText,
 } from "mdbreact"
 
 import SEO from "../components/seo"
@@ -36,10 +39,21 @@ const IndexPage = () => {
           header
         }
       }
+
+      cards: allMarkdownRemark(
+        filter: { fileAbsolutePath: { glob: "**/markdown/cards/*.md" } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
+              content
+            }
+          }
+        }
+      }
     }
   `)
-
-  console.log(content)
 
   return (
     <React.Fragment>
@@ -49,7 +63,7 @@ const IndexPage = () => {
           <Link to="/">{content.metadata.siteMetadata.title}</Link>
         </h1>
       </AppBar>
-      <MDBContainer fluid style={{ padding: 0 }}>
+      <MDBContainer fluid style={{ padding: 0, overflowX: "hidden" }}>
         <MDBRow>
           <MDBCol>
             <MDBJumbotron
@@ -69,6 +83,20 @@ const IndexPage = () => {
             </MDBJumbotron>
           </MDBCol>
         </MDBRow>
+        <MDBContainer>
+          <MDBRow>
+            {content.cards.edges.map(card => (
+              <MDBCol>
+                <MDBCard>
+                  <MDBCardBody>
+                    <MDBCardTitle>{card.node.frontmatter.title}</MDBCardTitle>
+                    <MDBCardText>{card.node.frontmatter.content}</MDBCardText>
+                  </MDBCardBody>
+                </MDBCard>
+              </MDBCol>
+            ))}
+          </MDBRow>
+        </MDBContainer>
       </MDBContainer>
       <MDBFooter color="blue">
         <MDBContainer fluid>

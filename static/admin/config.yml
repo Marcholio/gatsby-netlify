@@ -10,3 +10,10 @@ collections:
     fields:
       - { name: header, label: Header }
       - { name: description, label: Description }
+  - name: cards
+    folder: markdown/cards
+    label: Cards
+    create: true
+    fields:
+      - { name: title, label: Title }
+      - { name: content, label: Content }
