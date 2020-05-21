@@ -7,7 +7,6 @@ collections:
   - name: jumbo
     folder: markdown/jumbo
     label: Jumbo
-    create: true
     fields:
       - { name: header, label: Header }
       - { name: description, label: Description }
